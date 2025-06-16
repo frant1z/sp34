@@ -19,4 +19,13 @@ document.addEventListener('DOMContentLoaded',function(){
             });
         });
     }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click',function(e){
+            var id=a.getAttribute('href');
+            if(id.length>1&&document.querySelector(id)){
+                e.preventDefault();
+                document.querySelector(id).scrollIntoView({behavior:'smooth'});
+            }
+        });
+    });
 });

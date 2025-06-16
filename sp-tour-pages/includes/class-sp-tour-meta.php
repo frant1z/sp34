@@ -59,11 +59,14 @@ class SP_Tour_Meta {
         if ( isset( $_POST['sp_dates'] ) ) {
             $dates = [];
             foreach ( (array) $_POST['sp_dates'] as $d ) {
-                if ( empty( $d['date'] ) ) continue;
+                $date_value = isset( $d['date'] ) ? sanitize_text_field( $d['date'] ) : '';
+                if ( $date_value === '' ) {
+                    continue;
+                }
                 $dates[] = [
-                    'date' => sanitize_text_field( $d['date'] ),
-                    'price' => sanitize_text_field( $d['price'] ),
-                    'hot' => ! empty( $d['hot'] ) ? 1 : 0,
+                    'date'  => $date_value,
+                    'price' => isset( $d['price'] ) ? sanitize_text_field( $d['price'] ) : '',
+                    'hot'   => ! empty( $d['hot'] ) ? 1 : 0,
                 ];
             }
             $data['dates'] = $dates;

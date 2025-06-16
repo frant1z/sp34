@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded',function(){
         btn.addEventListener('click',function(){
             var panel=btn.nextElementSibling;
             panel.classList.toggle('open');
+            btn.classList.toggle('open');
         });
     });
     var form=document.getElementById('sptp-form');

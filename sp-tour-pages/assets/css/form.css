@@ -1,2 +1,4 @@
-.sptp-form input[type="text"],.sptp-form input[type="tel"]{width:100%;padding:8px;margin-bottom:8px;border:1px solid #ccc;border-radius:4px;}
-.sptp-form button{background:#2196f3;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;}
+.sptp-form input[type="text"],.sptp-form input[type="tel"]{width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:8px;font-size:16px;}
+.sptp-form button{background:var(--sptp-accent,#ff6b00);color:#fff;border:none;padding:12px 24px;border-radius:24px;cursor:pointer;font-weight:600;}
+.sptp-field{display:flex;align-items:center;gap:8px;}
+.sptp-field .icon{width:18px;height:18px;flex-shrink:0;}

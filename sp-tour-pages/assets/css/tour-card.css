@@ -3,10 +3,13 @@
 .sptp-card-img{position:relative;}
 .sptp-card-img img{width:100%;height:190px;object-fit:cover;display:block;}
 .sptp-card-img:after{content:'';position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(to top,rgba(0,0,0,.4),transparent);}
+.sptp-card-overlay{position:absolute;bottom:8px;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:.9em;font-weight:600;}
+.sptp-card-overlay .price{color:#ffe12e;font-weight:700;margin-left:6px;}
+.sptp-card-badges{position:absolute;top:8px;left:8px;display:flex;gap:6px;z-index:2;}
 .sptp-card-body{padding:1rem;display:flex;flex-direction:column;gap:8px;}
 .sptp-card-date{color:#555;display:flex;align-items:center;gap:6px;font-size:.9em;}
 .sptp-card-price{font-weight:700;color:var(--sptp-accent-dark);}
-.sptp-card-badges .badge{display:inline-block;margin-right:6px;padding:3px 8px;border-radius:6px;font-size:0.75em;line-height:1;}
+.sptp-card-badges .badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:0.75em;line-height:1;color:#fff;}
 .badge.hot{background:#ff5722;color:#fff;}
 .badge.new{background:#4caf50;color:#fff;}
 .sptp-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:0.5em;color:var(--sptp-accent);text-decoration:none;font-weight:600;}

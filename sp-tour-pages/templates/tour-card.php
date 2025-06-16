@@ -18,17 +18,22 @@ $badges = $data['badges'];
 ?>
 <div class="sptp-card">
     <?php if ( has_post_thumbnail( $post_id ) ) : ?>
-        <div class="sptp-card-img"><?php echo get_the_post_thumbnail( $post_id, 'medium' ); ?></div>
+        <div class="sptp-card-img">
+            <?php echo get_the_post_thumbnail( $post_id, 'medium' ); ?>
+            <div class="sptp-card-badges">
+                <?php if ( in_array( 'hot', $badges ) || ! empty( $hot ) ) : ?><span class="badge hot">🔥 Горящая цена</span><?php endif; ?>
+                <?php if ( in_array( 'new', $badges ) ) : ?><span class="badge new">Новый тур</span><?php endif; ?>
+            </div>
+            <?php if ( $nearest ) : ?>
+                <div class="sptp-card-overlay"><span><?php echo esc_html( $nearest ); ?></span><span class="price"><?php echo esc_html( $price ); ?></span></div>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
     <div class="sptp-card-body">
         <h3 class="sptp-card-title"><?php echo get_the_title( $post_id ); ?></h3>
         <?php if ( $nearest ) : ?>
             <div class="sptp-card-date"><img src="<?php echo $calendar_icon; ?>" class="icon" alt="" /><?php echo esc_html( $nearest ); ?> — <span class="sptp-card-price"><?php echo esc_html( $price ); ?></span></div>
         <?php endif; ?>
-        <div class="sptp-card-badges">
-            <?php if ( in_array( 'hot', $badges ) || ! empty( $hot ) ) : ?><span class="badge hot">🔥 Горящая цена</span><?php endif; ?>
-            <?php if ( in_array( 'new', $badges ) ) : ?><span class="badge new">Новый тур</span><?php endif; ?>
-        </div>
         <a href="<?php echo get_permalink( $post_id ); ?>" class="sptp-card-link">Подробнее <img src="<?php echo $arrow_icon; ?>" class="icon" alt="" /></a>
     </div>
 </div>

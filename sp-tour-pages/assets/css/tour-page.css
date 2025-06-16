@@ -4,8 +4,9 @@
 .sptp-acc-btn.open:after{transform:rotate(-90deg);}
 .sptp-acc-panel{display:none;padding:12px;border:1px solid #e0e0e0;border-top:none;border-radius:0 0 10px 10px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05);}
 .sptp-acc-panel.open{display:block;}
-.sptp-price-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ddd;align-items:center;gap:6px;font-size:.95em;}
-.sptp-price-item img{width:16px;height:16px;}
-.sptp-price-item .hot{color:#ff5722;font-weight:700;}
+.sptp-price-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed #ddd;align-items:center;gap:8px;font-size:1em;}
+.sptp-price-item img{width:18px;height:18px;flex-shrink:0;}
+.sptp-price-item .price{font-weight:600;color:var(--sptp-accent-dark);}
+.sptp-price-item .hot{color:#ff5722;font-weight:700;margin-left:4px;}
 .sptp-info p{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.95em;}
 .sptp-info img{width:18px;height:18px;flex-shrink:0;}

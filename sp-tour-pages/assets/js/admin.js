@@ -3,11 +3,18 @@
         if(e.target.classList.contains('sptp-upload')){
             e.preventDefault();
             var btn = e.target;
-            var frame = wp.media({title:'Выбор изображения', multiple:false});
+            var frame = wp.media({title:'Выбор изображения', multiple:true});
             frame.on('select', function(){
-                var att = frame.state().get('selection').first().toJSON();
-                btn.previousElementSibling.value = att.id;
-                btn.previousElementSibling.previousElementSibling.src = att.sizes.thumbnail.url;
+                var atts = frame.state().get('selection').toJSON();
+                var items = btn.closest('.sptp-images').querySelectorAll('.sptp-img-item');
+                atts.forEach(function(att,idx){
+                    if(idx < items.length){
+                        var input = items[idx].querySelector('input');
+                        var img   = items[idx].querySelector('img');
+                        input.value = att.id;
+                        img.src = att.sizes && att.sizes.thumbnail ? att.sizes.thumbnail.url : att.url;
+                    }
+                });
             });
             frame.open();
         }
@@ -30,13 +37,14 @@
         if(e.target.classList.contains('sptp-add-gallery')){
             e.preventDefault();
             var wrap=document.querySelector('.sptp-gallery');
-            var div=document.createElement('div');
-            div.className='sptp-gallery-item';
-            var frame=wp.media({title:'Галерея', multiple:false});
+            var frame=wp.media({title:'Галерея', multiple:true});
             frame.on('select',function(){
-                var att=frame.state().get('selection').first().toJSON();
-                div.innerHTML='<input type="hidden" name="sp_gallery[]" value="'+att.id+'" /> <img src="'+att.sizes.thumbnail.url+'" /> <button class="sptp-remove">Удалить</button>';
-                wrap.appendChild(div);
+                frame.state().get('selection').toJSON().forEach(function(att){
+                    var div=document.createElement('div');
+                    div.className='sptp-gallery-item';
+                    div.innerHTML='<input type="hidden" name="sp_gallery[]" value="'+att.id+'" /> <img src="'+(att.sizes && att.sizes.thumbnail ? att.sizes.thumbnail.url : att.url)+'" /> <button class="sptp-remove">Удалить</button>';
+                    wrap.appendChild(div);
+                });
             });
             frame.open();
         }

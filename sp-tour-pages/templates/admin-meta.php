@@ -16,9 +16,9 @@
             <div class="sptp-img-item">
                 <input type="hidden" name="sp_images[]" value="<?php echo esc_attr( $img ); ?>" />
                 <img src="<?php echo $img ? wp_get_attachment_image_url( $img, 'thumbnail' ) : ''; ?>" />
-                <button class="sptp-upload">Выбрать</button>
             </div>
         <?php endfor; ?>
+        <button class="sptp-upload">Выбрать изображения</button>
     </div>
     <h4>Программа тура</h4>
     <div class="sptp-program" data-name="sp_program[]">

@@ -25,7 +25,7 @@ $phone_icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmc
             <div class="sptp-price-item">
                 <img src="<?php echo $calendar_icon; ?>" alt="" />
                 <span><?php echo date_i18n( 'd.m.Y', strtotime( $d['date'] ) ); ?></span>
-                <span><?php echo esc_html( $d['price'] ); ?></span>
+                <span class="price"><?php echo esc_html( $d['price'] ); ?></span>
                 <?php if ( ! empty( $d['hot'] ) ) : ?><span class="hot">🔥</span><?php endif; ?>
             </div>
         <?php endforeach; ?>

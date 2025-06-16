@@ -1,0 +1,6 @@
+.sptp-acc-item{margin-bottom:5px;}
+.sptp-acc-btn{width:100%;text-align:left;padding:10px;background:#f5f5f5;border:none;border-radius:4px;}
+.sptp-acc-panel{display:none;padding:10px;border:1px solid #eee;border-top:none;}
+.sptp-acc-panel.open{display:block;}
+.sptp-price-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #ddd;}
+.sptp-price-item .hot{color:#ff5722;}

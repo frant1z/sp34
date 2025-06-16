@@ -1,0 +1,7 @@
+.sptp-page{padding:1rem;font-family:sans-serif;}
+.sptp-top-images{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:4px;}
+.sptp-top-images img{width:100%;height:auto;border-radius:8px;}
+.sptp-gallery-scroll{display:flex;overflow-x:auto;gap:4px;margin:1em 0;}
+.sptp-gallery-scroll img{width:120px;height:auto;border-radius:6px;flex-shrink:0;}
+.sptp-action-bar{position:fixed;bottom:0;left:0;right:0;padding:10px;background:#fff;border-top:1px solid #ccc;text-align:center;}
+.sptp-book-btn{background:#ff6600;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;}
